@@ -54,4 +54,29 @@ this comes free
 ## output when run
 ![ch02-simple-home-page](images/ch02-simple-home-page.jpg)
 
+
+# Testing
+we will use pytest
+![ch02-enable-pytest-settings](images/ch02-enable-pytest-settings.jpg)
+
+## add a pytest module
+create a dir called tests
+create a file in there test_home.py
+```python
+from fastapi.testclient import TestClient
+from main import api
+
+client = TestClient(api)
+
+def test_valid_id():
+    response = client.get("/home")
+    assert response.status_code == 200
+    assert response.json() == {"fruit": "apple"}
+```
+now right click and run the pytest
+
+
+## enable pytest in pycharm
+
+
 [click here to jump to readme](../README.md)
