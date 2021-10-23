@@ -47,6 +47,10 @@ def home(request: Request):
 ## template
 see the repo
 
+## swagger ui
+this comes free
+![ch02-swagger-01](images/ch02-swagger-01.jpg)
+
 ## output when run
 ![ch02-simple-home-page](images/ch02-simple-home-page.jpg)
 
