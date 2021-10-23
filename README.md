@@ -50,6 +50,16 @@ see the docs at  https://httpie.io/docs#installation
 run `>https httpie.io/hello`
 
 #Create first helloWorld rest endpoint
+## add requirements
+* create a file requirements.txt with contents
+  ```text
+    fastapi
+    uvicorn
+  ```
+
+pyCharm will prompt for install of the dependencies
+
+
 
 
 
