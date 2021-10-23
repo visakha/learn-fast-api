@@ -1,6 +1,12 @@
 # learn-fast-api
 Notes when learning about fastApi - a Python web framework
 
+# credits
+The below resources helped me learn the stuff mentioned below. 
+Note: There are many other resources not listed here - ack and credit to them
+* https://www.youtube.com/watch?v=sBVb4IB3O_U
+* 
+
 # set up the project
 Intialize a project on a git repo with just readme
 
@@ -43,13 +49,13 @@ verify venv using powershell
 ![verify-venv-ps](docs/images/verify-venv-ps.jpg)
 
 
-#Setup httpie
+# Setup httpie
 The python native http tool similar to `curl` or `httprepl`
 see the docs at  https://httpie.io/docs#installation
 
 run `>https httpie.io/hello`
 
-#Create first helloWorld rest endpoint
+# Create first helloWorld rest endpoint
 ## add requirements
 * create a file requirements.txt with contents
   ```text
@@ -59,6 +65,40 @@ run `>https httpie.io/hello`
 
 pyCharm will prompt for install of the dependencies
 
+add the main.py (see the github repo or watch the video mentioned in the credits section)
+```python
+import fastapi
+import uvicorn
+
+api = fastapi.FastAPI()
+
+
+@api.get("/")
+def home():
+    return {
+        "msg": "Hello world",
+    }
+
+
+uvicorn.run(api)
+
+```
+
+result
+
+```cmd
+learnFastAPI>>>http localhost:8000
+HTTP/1.1 200 OK
+content-length: 21
+content-type: application/json
+date: Sat, 23 Oct 2021 16:29:10 GMT
+server: uvicorn
+
+{
+    "msg": "Hello world"
+}
+
+```
 
 
 
