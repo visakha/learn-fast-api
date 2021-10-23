@@ -1,14 +1,15 @@
 import fastapi
 import uvicorn
+from views import home
 
 api = fastapi.FastAPI()
 
 
-@api.get("/")
-def home():
-    return {
-        "msg": "Hello world",
-    }
+def config_routers():
+    api.include_router(home.router)
 
 
-uvicorn.run(api)
+config_routers()
+
+if __name__ == '__main__':
+    uvicorn.run(api)
